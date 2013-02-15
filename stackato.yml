@@ -1,0 +1,21 @@
+name: discourse-demo
+instances: 1
+framework:
+  type: rails3
+  runtime: ruby19
+mem: 256M
+services:
+  discourse-db: postgresql
+  discource-redis: redis
+hooks:
+  post-staging:
+    - bundle install
+#    - rake db:migrate
+#    - rake db:test:prepate
+# #     - bundle exec rake threadsafe:disabled
+# #     - bundle exec rake db:migrate
+# #     - bundle exec rake db:schema:load
+# #     - bundle exec rake db:seed
+# #     - bundle exec rake threadsafe:enabled
+#     
+#
